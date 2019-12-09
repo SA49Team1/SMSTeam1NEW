@@ -10,5 +10,7 @@ public interface StudentsRepository extends JpaRepository<Students,Integer> {
 
 	Students findByUserName(String username);
 
+	boolean existsByUserName(String userName);
+
 	
 }

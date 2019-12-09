@@ -121,6 +121,9 @@ public class AdmController {
 		
 		if(s1!=null) stu.setId(s1.getId());
 		
+		//////verify if username already exist
+		if(sturepo.existsByUserName(stu.getUserName())) return "forward:/admin/addstudent";
+		
 		sturepo.save(stu);
 		
 		////////////////Initiate course application list for each student
@@ -163,6 +166,7 @@ public class AdmController {
 		
 		
 		sturepo.delete(stu);
+		sturepo.flush();
 		
 		
 		
@@ -245,6 +249,10 @@ public class AdmController {
         Faculty f1= facrepo.findByFacultyID(fac.getFacultyID());
 		
 		if(f1!=null) fac.setId(f1.getId());
+		
+		//////verify if username already exist
+		if(sturepo.existsByUserName(fac.getUserName())) return "forward:/admin/addstudent";
+		
 		facrepo.save(fac);
 		
 		return "forward:/admin/facultylist";

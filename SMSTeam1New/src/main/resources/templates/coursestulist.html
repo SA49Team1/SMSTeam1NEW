@@ -98,7 +98,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-twothird">
         <h5>List of Student to be graded</h5>
         <table class="w3-table w3-striped w3-white">
-        
+        <h1 th:text="${coursename}">Course Name</h1>
          		<tr>
  			<td><i class="fa fa-user w3-text-blue w3-large"></i>Student Name</td><td>Grade</td>
  		</tr>
@@ -139,9 +139,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
  			
  		
         </table>
-        
+            	<hr>
+	<a href="#" th:href="@{/faculty/assignedcourses}" type=button class="w3-btn">Cancel</a><br/>
  			
       </div>
+  
       
 
     </div>

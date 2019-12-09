@@ -177,6 +177,7 @@ public class FacController {
 		
 		
 		
+		
 		return "coursestulist";
 	}
 	
@@ -187,7 +188,7 @@ public class FacController {
 		
 		Course cou=courepo.findById(stucou.getCourse().getId()).get();
 		model.addAttribute("course", cou);
-		
+		model.addAttribute("currentcourseid", cou.getId());
 		
 		model.addAttribute("stucou",stucou);
 		model.addAttribute("gralist",gralist);

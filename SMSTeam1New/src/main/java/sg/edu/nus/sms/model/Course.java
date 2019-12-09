@@ -2,6 +2,7 @@ package sg.edu.nus.sms.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,10 +21,12 @@ public class Course {
 	private int id;
 	
 	@NotEmpty
+	@Column(unique=true)
 	private String courseName;
 	@NotNull
 	private int courseUnit;
 	@NotEmpty
+	@Column(unique=true)
 	private String courseCode;
 	@NotEmpty
 	private String department;
